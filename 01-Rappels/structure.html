@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Structure HTML</title>
+</head>
+<body>
+<a href="#main">Skip content</a>
+
+<!-- Landmark role : zones -->
+<header>
+    Entête / bannière.
+    Il peut y avoir plusieurs balises header.
+</header> <!-- banner -->
+<main id="main">
+    Important pour l'accessibilité
+    Et pour le référencement ( contenu principal et unique de la page )
+</main>
+<footer>
+    Pied de page / pied d'article ?
+    Il peut y en avoir plusieur dans la page.
+</footer>
+<nav>
+    <ul>
+        <li>
+            <a href="#">Lien 1</a>
+        </li>
+        <li>
+            <a href="#">Lien 2</a>
+        </li>
+    </ul>
+</nav>
+<article>
+    -> Présenter une / des informations
+</article>
+<section>
+    -> Découper en thématiques
+</section>
+
+<aside>
+    -> Complementary
+    -> Contenu secondaire, ou complémentaire / annexe au flux principal
+</aside>
+
+
+<!-- Sémantiques
+ -> Lecture spécifique de la balise par les lecteurs d'écran
+ -> Focusables ( accessibles à la navigation au clavier - touche tab )
+ -> Evenements particuliers ( formulaire : submit )
+ ...
+ -->
+
+<!-- le lecteur d'écran lit les informations même cachées -->
+<details>
+    <summary>Coucou</summary>
+    <p>Détail du texte</p>
+</details>
+<!-- le lecteur lit la balise alt -->
+<img src="" alt="description de l'image">
+
+<!-- le lecteur d'écran indique que c'est une liste + le nombre d'items ( li ) -->
+<ul></ul>
+<ol></ol>
+
+<!-- éléments focusables : ( accessible avec tab )
+a, button, input, textarea, select
+-> Tous les éléments cliquables doivent avoir pour balise l'un de ces trois choix
+
+-->
+<a href="#"></a>
+<button></button>
+<form>
+    <label for="toto">Mon label</label>
+    <input id="toto"/>
+</form>
+
+
+<!-- médias -->
+
+<figure>
+    <img style="width: 50%" src="https://data.whicdn.com/images/124104781/original.jpg" alt="">
+    <figcaption>Légende de l'image</figcaption>
+</figure>
+
+<!------------------------->
+<form>
+    <fieldset>
+        <legend>Adresse</legend>
+
+        <p>
+            <label for="num">Numéro : </label>
+            <input id="num" type="number">
+        </p>
+        <p>
+            <label for="street">Rue: </label>
+            <input id="street" type="text">
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Crudités</legend>
+
+        <p>
+            <label for="salad">Salade</label>
+            <input id="salad" type="checkbox" name="veggies">
+        </p>
+        <p>
+            <label for="tomato">Tomates</label>
+            <input id="tomato" type="checkbox" name="veggies">
+        </p>
+        <p>
+            <label for="onions">Oignons</label>
+            <input id="onions" type="checkbox" name="veggies">
+        </p>
+    </fieldset>
+</form>
+
+
+
+</body>
+</html>

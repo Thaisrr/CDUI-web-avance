@@ -1,0 +1,60 @@
+:root {
+    --main-width: 95%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background-color: aquamarine;
+    width: var(--main-width);
+    height: 500px;
+    margin: 30px auto;
+}
+
+nav {
+    background-color: darkseagreen;
+    height: 70px;
+}
+
+ul {
+    background-color: #035703;
+    height: 60px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    color: white;
+    width: var(--main-width);
+}
+
+.deck {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.d2 {
+    width: var(--main-width);
+    margin: 40px auto;
+}
+
+.card {
+    background-color: brown;
+    width: 28%;
+    aspect-ratio: 1/1;
+}
+
+/* Pour les écrans de 580px -> largeur de 90% */
+@media screen and (min-width: 580px){
+    :root {
+        --main-width: 90%;
+    }
+}
+
+@media  screen and (min-width: 1200px){
+    :root {
+        --main-width: 80%;
+    }
+}

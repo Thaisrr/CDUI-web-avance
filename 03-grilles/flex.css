@@ -1,0 +1,55 @@
+.box {
+    background-color: darkseagreen;
+    min-width: 200px;
+    aspect-ratio: 1/1;
+    border: solid 1px #035703;
+}
+
+.parent {
+    width: 80%;
+    min-height: 400px;
+    margin: 50px auto;
+    border: solid 2px black;
+    display: flex;
+    flex-direction: row; /* default : row | column | *-reverse */
+    /*
+    justify-content : placer dans le sens de la direction
+    ( horizontal pour row, vertical pour column )
+    align-items : placer dans le sens perpendiculaire à la direction
+     ( vertical en column, horizontal pour row )
+     */
+    align-items: center ; /* center | flex-start (default) | flex-end | stretch | baseline */
+
+}
+
+.p1 {
+    justify-content: flex-start;
+/* se colle au début du container
+( à gauche | en haut, ou à droite | bas en reverse ) */
+}
+
+.p2 {
+    justify-content: flex-end;
+}
+
+.p3 {
+    justify-content: center;
+}
+
+.p4 {
+    justify-content: space-between;
+}
+
+.p5 {
+    justify-content: space-around;
+}
+
+.p6 {
+    justify-content: space-evenly;
+}
+
+.p7 {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
