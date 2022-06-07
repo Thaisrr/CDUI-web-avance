@@ -1,0 +1,138 @@
+:root {
+    --main-width: 95%;
+    --secondary-color: #FFBFA0;
+}
+body {
+    margin: 0;
+}
+
+.container {
+    width: var(--main-width);
+    margin: auto;
+    border: dashed 1px black;
+    max-width: 1200px;
+}
+
+nav {
+    height: 70px;
+    background: white;
+    position: sticky;
+    top: 0;
+    border-bottom: solid 3px black;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+}
+
+.flex-between {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header {
+    background-color: var(--secondary-color);
+}
+
+header .flex-between {
+    flex-wrap: wrap-reverse;
+}
+
+header .text {
+    width: 80%;
+    text-align: center;
+}
+
+header .img {
+    width: 60%;
+    max-width: 330px;
+}
+
+img {
+    width: 100%;
+}
+
+/******* Cards ***************/
+
+.border, .card {
+    border: solid 4px black;
+    box-shadow: 8px 8px black;
+    border-radius: 15px;
+}
+
+.card {
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+.card-header {
+    height: 50%;
+    overflow: hidden;
+}
+
+.card-body {
+    height: 40%;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.card-footer {
+    height: 10%;
+}
+
+.skills {
+    min-height: 500px;
+
+}
+
+
+@media screen and (min-width: 500px){
+    nav ul {
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (min-width: 650px){
+    :root {
+        --main-width: 90%;
+    }
+    .flex-between {
+        justify-content: space-between;
+    }
+
+    header .text {
+        width: 40%;
+    }
+
+    header .img {
+        width: 30%;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .card:last-child {
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (min-width: 1000px){
+    :root {
+        --main-width: 80%;
+    }
+    .card, .card:last-child {
+        width: 30%;
+    }
+}
