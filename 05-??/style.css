@@ -120,3 +120,81 @@ li:nth-child(3n) {
     text-decoration: underline blue;
 }
 
+.manuscrit {
+    width: 30%;
+}
+
+.manuscrit:first-letter {
+    color: red;
+    font-size: 1.3em;
+}
+
+.manuscrit::first-line {
+    color: blue;
+}
+
+.manuscrit::selection{
+    background-color: yellow;
+}
+
+/**** Formulaires ********/
+
+/* Focus, checked, disabled, enabled, indeterminate, valid, invalid
+required, placeholder-shown, placeholder
+ */
+
+input:invalid {
+    border: solid violet;
+}
+
+input:valid {
+    border: solid green
+}
+
+input:required {
+    outline: solid dodgerblue;
+}
+
+input::placeholder {
+    color: #ffe085;
+}
+
+input:placeholder-shown {
+    background-color: blue;
+}
+
+input:in-range {
+    color: green;
+}
+
+input:out-of-range {
+    color: red;
+}
+
+input:required + label {
+    color: cornflowerblue;
+}
+
+input:required + label::after {
+    content: "*";
+}
+
+form p {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 60%;
+    margin: auto;
+    gap: 30px;
+}
+
+
+
+/* les spans directement placé après un p ( au même ) */
+.siblings p + span {
+    color: dodgerblue;
+}
+
+/* tous les spans frères / soeur des p ( au même niveau ) */
+.siblings p ~ span {
+    border: solid blueviolet;
+}
