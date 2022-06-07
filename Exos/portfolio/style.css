@@ -6,15 +6,26 @@ body {
     margin: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .container {
     width: var(--main-width);
     margin: auto;
-    border: dashed 1px black;
     max-width: 1200px;
 }
 
+.flex-between {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/****** Barre de Navigation *****************/
+
 nav {
-    height: 70px;
     background: white;
     position: sticky;
     top: 0;
@@ -28,15 +39,56 @@ nav ul {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-
-}
-
-.flex-between {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    height: 70px;
     align-items: center;
 }
+
+nav a:last-child:link {
+
+}
+
+nav li, nav a:link {
+    height: 100%;
+}
+
+nav a:link, .nav-link:link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 1.5em;
+    border: solid transparent 3px;
+    padding: 0 10px;
+    transition: background-color .5s;
+}
+
+nav a:visited {
+    color: #252525;
+}
+
+nav a:hover {
+  /*  background-color: rgba(197, 197, 197, 0.15);
+    border-bottom-color: #E08E45; */
+    background-color: yellow;
+}
+
+nav:active {
+   color: white;
+}
+
+/*
+LoVe HAte
+Link
+Visited
+Hover
+Active
+ */
+
+
+
+
+
+/************ Header ********************/
 
 header {
     background-color: var(--secondary-color);
@@ -69,6 +121,7 @@ img {
 }
 
 .card {
+    overflow: hidden;
     height: 400px;
     margin-bottom: 30px;
 }

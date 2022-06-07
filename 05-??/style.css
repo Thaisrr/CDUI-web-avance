@@ -1,0 +1,122 @@
+a:link { /* état par défaut : lien non visité */
+    text-decoration: none;
+    color: #035703;
+    font-weight: bold;
+    font-size: 2em;
+}
+/* sur visited : on ne peut modifier
+que les couleurs ( color, background-color, border-color )
+ */
+
+a:visited {
+  color: #FFBFA0;
+}
+
+a:hover {
+    cursor: pointer;
+    border: groove yellow 2px;
+}
+
+a:active {
+    font-size: 5em;
+    color: blueviolet;
+}
+
+/*
+LoVe HAte
+
+Link
+Visited
+Hover
+Active
+
+ */
+
+
+/***** Transitions **********/
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    transition-property: background-color, width, height;
+    transition-delay: .5s; /* s ou ms  | 1s 500ms 0.5s .5s */
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+}
+
+.box:hover {
+    background-color: yellow;
+    width: 400px;
+    height: 400px;
+}
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    background-color: tomato;
+    transition: background-color 2s, linear, width 3s 0s ease-in, height 3s ease-in-out;
+}
+/* propriété duration delay function, ... */
+
+.box2:hover {
+    background-color: yellow;
+    width: 400px;
+    height: 400px;
+}
+
+
+/***** Before After ***********/
+
+
+.truc {
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-color: #FFBFA0;
+}
+.truc:before {
+    content: 'Before--';
+}
+
+.truc:after {
+    content: "--After";
+}
+
+.styled {
+   width: 120px;
+    height: 3em;
+    position: relative;
+    border: none;
+    background-color: #ffe085;
+    border-radius: 50px;
+    z-index: 2;
+}
+
+.styled::before {
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    border: solid 3px black;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1;
+}
+
+
+li:nth-child(2) {
+    background-color: #035703;
+}
+
+/* even : lignes paires | odd : lignes impaires */
+li:nth-child(even) {
+    color: tomato;
+}
+
+li:nth-child(3n) {
+    text-decoration: underline blue;
+}
+
