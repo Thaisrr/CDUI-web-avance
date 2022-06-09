@@ -435,4 +435,14 @@ do {
   ( par rapport à la supposition précédente )
  */
 
-const number_to_guess = Math.floor(Math.random() * 101) ;
+
+const number_to_guess = 50; // Nombre à deviner - à générer aléatoirement plus tard
+const user_guess = prompt('Entrez un nombre entre 0 et 100'); // permet d'enregistrer la valeur entrée par l'utilisateur
+
+if(user_guess < number_to_guess ) {
+    alert('Raté, trop bas');
+} else if (user_guess > number_to_guess) {
+    alert('Nope, trop haut');
+} else if( user_guess === number_to_guess) {
+    alert('Gagné');
+}
