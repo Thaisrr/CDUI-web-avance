@@ -314,7 +314,7 @@ Calculer et afficher si l'user est plus ou moins vieux que la reine d'Angleterre
 Bonus :
 - Afficher une erreur si user n'entre pas un nombre ou si le nombre est négatif
  */
-
+/*
 const name = prompt('Quel est votre nom ?');
 alert('Bonjour ' + name);
 
@@ -336,7 +336,7 @@ if(isNaN(age)) {
 } else {
     alert('Erreur');
 }
-
+*/
 
 /*
 == ( ancien JS ) -> à ne pas utiliser  -> vérifie uniquement la valeur
@@ -435,7 +435,7 @@ do {
   ( par rapport à la supposition précédente )
  */
 
-
+/*
 const number_to_guess = 50; // Nombre à deviner - à générer aléatoirement plus tard
 const user_guess = prompt('Entrez un nombre entre 0 et 100'); // permet d'enregistrer la valeur entrée par l'utilisateur
 
@@ -446,8 +446,53 @@ if(user_guess < number_to_guess ) {
 } else if( user_guess === number_to_guess) {
     alert('Gagné');
 }
-
+*/
 /*
 - Vérifier les autres cas : pas nombre entré, nombre en dehors des limites, mauvais type de donnée, ...
 - Lancer l'action en boucle tant que l'user n'a pas gagné
  */
+
+
+// Générer un nombre aléatoirement, compris entre 0 et 100
+const pc_numb = Math.floor(Math.random() * 101);
+console.log("Nombre à deviner : ", pc_numb)
+let isWin = false;
+let nb_coups = 0;
+do {
+
+// Demander à l'utilisateur d'entrer un nombre, et enregistrer sa réponse
+    let user_numb = prompt('Entrez un nombre entre 0 et 100'); // retourne une string
+    console.log("nombre entré avant conversion : ", user_numb);
+    /*
+    Si user annuler la prompt sans écrire, la prompt retour <empty string> ( une chaîne vide )
+    Number(<empty string>) retour 0
+    Donc, on vérifie si la chaine n'est pas vide avant de la convertir, pour éviter d'avoir un user_numb = 0
+    alors que la chaîne vide.
+     */
+    user_numb = (user_numb)? Number(user_numb) : user_numb;
+    user_numb &&= Number(user_numb);
+    console.log("Nombre entré après conversion: ", user_numb);
+
+// Vérifier si la réponse de l'utilisateur est valide :
+
+    // Si il n'a pas entré de réponse -> si la réponse est indéfinie, ou si la réponse n'est pas un nombre -> alors j'envoie une erreur
+    if(!user_numb && user_numb !== 0) { // si user_numb === undefined ou si user_numb === NaN
+        alert('Le nombre entré est incorrect')
+    } else if(user_numb > 100 || user_numb < 0 ) { // Si la réponse n'est pas comprise entre 0 et 100 -> alors j'affiche une erreur
+        alert('Le nombre doit être compris entre 0 et 100');
+    } else {  // Sinon, la réponse est valide : alors on compare la réponse avec le nombre attendu
+        nb_coups++;
+        if(user_numb === pc_numb) {  // Si les deux nombres sont égaux alors j'affiche des félicitations et j'arrête le process
+            alert(`Félicitations ! Vous avez gagné en ${nb_coups} coups`)
+            isWin = true;
+        } else if(user_numb > pc_numb) { // Si la réponse est + grande que le nombre attendu alors j'affiche un message disant "trop haut"
+            alert(" Trop haut");
+        } else if(user_numb < pc_numb) { // Si la réponse est - grande que le nombre attendu, alors j'affiche un message disant trop bas
+            alert('Trop bas');
+        }
+    }
+} while (!isWin) // Si l'utilisateur n'a pas gagné, alors je rejoue le process ( sauf la génération aléatoire )
+
+
+
+
