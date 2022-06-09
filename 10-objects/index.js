@@ -62,7 +62,7 @@ console.log(message);
 
 
 // Afficher dans la console : 'Il a ... notes, qui sont : ........ '
-let message = `Il y ${notes.length} notes, qui sont : `;
+ message = `Il y ${notes.length} notes, qui sont : `;
 user.notes.forEach(function (note) {
     message = message.concat(`${note}, `);
 })
