@@ -446,3 +446,8 @@ if(user_guess < number_to_guess ) {
 } else if( user_guess === number_to_guess) {
     alert('Gagné');
 }
+
+/*
+- Vérifier les autres cas : pas nombre entré, nombre en dehors des limites, mauvais type de donnée, ...
+- Lancer l'action en boucle tant que l'user n'a pas gagné
+ */
