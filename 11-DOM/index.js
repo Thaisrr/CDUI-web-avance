@@ -140,4 +140,31 @@ connecter
 
 Bonus 2 :
 - On efface le message secret au bout de 5s
+
+
+Découpage de l'exercice :
+
+1. Permettre à l'utilisateur d'entrer du texte, et le récupérer en JS
+/
+/
+/
+/
+
+2. Comparer l'entré utilisateur avec un mot de passe existant enregistré dans le code
+/
+/
+/
+/
+
+3. Afficher un message d'erreur si l'entrée est différente du mot de passe
+/
+/
+/
+/
+
+4. Afficher 'un message secret' si l'entrée est égale au mot de passe
+/
+/
+/
+/
  */
